@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+
+# Environments
+env_sintetic/
+.env/
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tools
+.idea/
+.vscode/
+*.log
+
+# Results and artifacts
+results/
+**/reports/*.json
+**/graphics/*.png
+**/data/*.csv
+
+# Jupyter
+.ipynb_checkpoints/
