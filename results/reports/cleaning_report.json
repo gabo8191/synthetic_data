@@ -1,0 +1,61 @@
+{
+    "load_info": {
+        "file": "Titanic-Dataset.csv",
+        "original_shape": [
+            891,
+            12
+        ],
+        "original_columns": [
+            "PassengerId",
+            "Survived",
+            "Pclass",
+            "Name",
+            "Sex",
+            "Age",
+            "SibSp",
+            "Parch",
+            "Ticket",
+            "Fare",
+            "Cabin",
+            "Embarked"
+        ]
+    },
+    "duplicates": {
+        "before": 0,
+        "removed": 0
+    },
+    "final_info": {
+        "final_shape": [
+            891,
+            12
+        ],
+        "missing_values": {
+            "passengerid": 0,
+            "survived": 0,
+            "pclass": 0,
+            "name": 0,
+            "sex": 0,
+            "age": 0,
+            "sibsp": 0,
+            "parch": 0,
+            "ticket": 0,
+            "fare": 0,
+            "cabin": 0,
+            "embarked": 0
+        },
+        "data_types": {
+            "passengerid": "float64",
+            "survived": "float64",
+            "pclass": "float64",
+            "name": "object",
+            "sex": "object",
+            "age": "float64",
+            "sibsp": "float64",
+            "parch": "float64",
+            "ticket": "object",
+            "fare": "float64",
+            "cabin": "object",
+            "embarked": "object"
+        }
+    }
+}

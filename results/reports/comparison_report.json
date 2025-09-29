@@ -1,0 +1,95 @@
+{
+    "pclass": {
+        "type": "numeric",
+        "real_mean": 2.308641975308642,
+        "synthetic_mean": 2.406715154647827,
+        "real_std": 0.836071240977049,
+        "synthetic_std": 0.6286377310752869,
+        "rel_mean_diff": 0.04248089567948915,
+        "std_rel_diff": 0.2481050653761889
+    },
+    "age": {
+        "type": "numeric",
+        "real_mean": 29.36158249158249,
+        "synthetic_mean": 22.628847122192383,
+        "real_std": 13.019696550973201,
+        "synthetic_std": 9.615252494812012,
+        "rel_mean_diff": 0.22930424029519644,
+        "std_rel_diff": 0.26148413235535145
+    },
+    "sibsp": {
+        "type": "numeric",
+        "real_mean": 0.5230078563411896,
+        "synthetic_mean": 1.563004732131958,
+        "real_std": 1.1027434322934317,
+        "synthetic_std": 1.5368810892105103,
+        "rel_mean_diff": 1.9884918425152622,
+        "std_rel_diff": 0.3936887259570255
+    },
+    "parch": {
+        "type": "numeric",
+        "real_mean": 0.38159371492704824,
+        "synthetic_mean": 0.5969124436378479,
+        "real_std": 0.8060572211299483,
+        "synthetic_std": 0.6226641535758972,
+        "rel_mean_diff": 0.5642617125110313,
+        "std_rel_diff": 0.22751867081714958
+    },
+    "fare": {
+        "type": "numeric",
+        "real_mean": 32.204207968574636,
+        "synthetic_mean": 48.93486022949219,
+        "real_std": 49.6934285971809,
+        "synthetic_std": 43.90203094482422,
+        "rel_mean_diff": 0.51951758205165,
+        "std_rel_diff": 0.11654252515563444
+    },
+    "sex": {
+        "type": "categorical",
+        "categories": [
+            "female",
+            "male"
+        ],
+        "real_freq": {
+            "female": 0.35241301907968575,
+            "male": 0.6475869809203143
+        },
+        "synthetic_freq": {
+            "female": 0.3081988990306854,
+            "male": 0.6899159550666809
+        }
+    },
+    "embarked": {
+        "type": "categorical",
+        "categories": [
+            "C",
+            "Q",
+            "S"
+        ],
+        "real_freq": {
+            "C": 0.18855218855218855,
+            "Q": 0.08641975308641975,
+            "S": 0.7250280583613917
+        },
+        "synthetic_freq": {
+            "C": 0.0017918245866894722,
+            "Q": 0.0008164714672602713,
+            "S": 0.9971928000450134
+        }
+    },
+    "survived": {
+        "type": "target",
+        "categories": [
+            "0.0",
+            "1.0"
+        ],
+        "real_freq": {
+            "0.0": 0.6161616161616161,
+            "1.0": 0.3838383838383838
+        },
+        "balanced_freq": {
+            "0.0": 0.5,
+            "1.0": 0.5
+        }
+    }
+}
