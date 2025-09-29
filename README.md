@@ -12,6 +12,7 @@ results/
 docs/
   algorithm.md          # Explicación del pipeline y GAN
   results_analysis.md   # Interpretación de resultados y métricas
+  glossary.md           # Glosario técnico y definiciones
 src/
   algorithm.py        # GAN simple para generar datos
   analyzer.py         # Análisis, balanceo y comparación
@@ -43,6 +44,7 @@ Resultados en `results/`.
 
 - Ver `docs/algorithm.md` para entender el flujo del pipeline, decisiones de preprocesamiento, el entrenamiento del generador y la función unificada de gráficos.
 - Ver `docs/results_analysis.md` para interpretar `results/reports/*.json` y las figuras de `results/graphics/`.
+- Ver `docs/glossary.md` para definiciones formales (p. ej., GAN, estratificación, bins, fidelidad, drift).
 
 ### Objetivo y organización
 

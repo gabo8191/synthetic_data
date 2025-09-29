@@ -1,10 +1,10 @@
 ## Algoritmo y pipeline de generación de datos sintéticos
 
-Este documento describe con detalle el flujo end-to-end, las decisiones de preprocesamiento y el funcionamiento del GAN sencillo utilizado para generar datos sintéticos del Titanic. Se incluyen referencias directas al código fuente y a los artefactos generados en `results/`.
+Este documento describe, en tercera persona, el flujo end‑to‑end, las decisiones de preprocesamiento y el funcionamiento del GAN (Generative Adversarial Network = red generativa adversaria) utilizado para generar datos sintéticos del Titanic. Se incluyen referencias directas al código fuente y a los artefactos generados en `results/`.
 
 ### 1) Carga y limpieza del dataset
 
-La carga y limpieza viven en `src/data/loader.py`. Se estandarizan nombres a snake_case, se convierten tipos numéricos y se imputan nulos con mediana/moda. También se eliminan duplicados y se registra un reporte completo.
+La carga y limpieza residen en `src/data/loader.py`. Se estandarizan nombres a snake_case (snake_case = minúsculas con guiones bajos), se convierten tipos numéricos y se imputan nulos con mediana/moda. También se eliminan duplicados y se registra un reporte completo.
 
 ```1:18:src/data/loader.py
 import pandas as pd
@@ -73,11 +73,11 @@ balanced_df = pd.DataFrame(X_res, columns=X.columns)
 balanced_df[target_column] = y_res
 ```
 
-Además, se generan los gráficos `results/graphics/original_dist.png` y `results/graphics/balanced_dist.png` con `plot_class_distribution`.
+Además, se generan los gráficos `results/graphics/original_dist.png` y `results/graphics/balanced_dist.png` con `plot_class_distribution` (countplot = barras de conteo por clase).
 
 ### 3) Preparación de variables para el generador
 
-En el pipeline, antes de sintetizar, se eliminan columnas tipo ID, se aplica One-Hot a categóricas y se escalan sólo columnas continuas usando `StandardScaler`.
+En el pipeline, antes de sintetizar, se eliminan columnas tipo ID, se aplica One‑Hot (codificación binaria por categoría) a categóricas y se escalan sólo columnas continuas usando `StandardScaler` (estandarización a media 0 y desviación 1).
 
 ```92:129:src/pipeline/main.py
 # Quitar identificadores
@@ -104,7 +104,7 @@ if scaler is not None and len(continuous_cols) > 0:
 
 ### 4) Generación con GAN sencillo
 
-El generador/discriminador son redes densas pequeñas con activaciones `ReLU` y salida `Tanh` para el generador. Los datos se normalizan a [-1, 1] antes de entrenar.
+El generador/discriminador son redes densas (fully‑connected) con activaciones `ReLU` y salida `Tanh` para el generador. Los datos se normalizan a [-1, 1] antes de entrenar para que `Tanh` opere en su rango efectivo.
 
 ```24:41:src/models/gan.py
 # Normalización a [-1, 1] para que Tanh funcione adecuadamente
@@ -123,7 +123,7 @@ class Generator(nn.Module):
         )
 ```
 
-El bucle de entrenamiento alterna actualizaciones de D y G con `BCELoss` y `Adam`:
+El bucle de entrenamiento alterna actualizaciones de D (discriminador) y G (generador) con `BCELoss` (Binary Cross‑Entropy = entropía cruzada binaria) y `Adam` (optimizador de gradiente adaptativo):
 
 ```62:89:src/models/gan.py
 for epoch in range(epochs):
@@ -139,7 +139,7 @@ for epoch in range(epochs):
         ...
 ```
 
-El entrenamiento puede ser estratificado por clase del objetivo (`stratified=True`), entrenando un GAN por clase y concatenando resultados:
+El entrenamiento puede ser estratificado por clase del objetivo (`stratified=True`), entrenando un GAN por clase y concatenando resultados. Estratificar (stratify) significa entrenar modelos condicionados a cada clase del objetivo para preservar dependencias condicionales:
 
 ```127:147:src/models/gan.py
 if stratified and labels is not None:
@@ -152,7 +152,7 @@ if stratified and labels is not None:
 df_sintetico = pd.concat(generated_parts, axis=0, ignore_index=True)
 ```
 
-La generación final desnormaliza de vuelta al dominio original:
+La generación final desnormaliza (inversa de la normalización) de vuelta al dominio original:
 
 ```96:107:src/models/gan.py
 with torch.no_grad():
@@ -180,7 +180,7 @@ def _plot_side_by_side_bars(...):
     plt.bar([i + 0.2 for i in x], right_values, width=0.4, label=right_label, color=right_color)
 ```
 
-Para numéricas, se calculan histogramas con mismos bordes de bin para una comparación justa y se guardan en `results/graphics/compare/compare_<col>.png`:
+Para numéricas, se calculan histogramas con mismos bordes de bin (bin = intervalo) para una comparación justa y se guardan en `results/graphics/compare/compare_<col>.png`:
 
 ```169:205:src/analysis/analyzer.py
 real_counts, edges = np.histogram(real_vals, bins=bins, range=(vmin, vmax))

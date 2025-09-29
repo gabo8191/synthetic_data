@@ -1,6 +1,6 @@
 ## Análisis de resultados y cómo interpretarlos
 
-Este documento detalla, en tercera persona, cómo deben leerse los artefactos de `results/` y cómo se relacionan con el código que los produce. Cuando aparezcan términos técnicos, se incluirá entre paréntesis una aclaración breve.
+Este documento detalla, en tercera persona, cómo deben leerse los artefactos de `results/` y cómo se relacionan con el código que los produce. Cuando aparezcan términos técnicos, se incluirá entre paréntesis una aclaración breve. Para definiciones formales, consultar el Glosario en `docs/glossary.md`.
 
 ### 1) Ubicación y propósito de cada salida
 
@@ -170,3 +170,17 @@ with open(os.path.join(REPORTS_DIR, "comparison_report.json"), "w", encoding="ut
 ```
 
 Interpretación general de los resultados: valores bajos de `rel_mean_diff` y `std_rel_diff` (por ejemplo, por debajo de 0.3) sugieren buena fidelidad (fidelidad = similitud estadística entre real y sintético). En este conjunto, variables como `pclass` y `fare` muestran diferencias pequeñas, mientras que variables discretas de conteo como `sibsp` y `parch` presentan diferencias mayores. Las figuras adjuntas permiten confirmar visualmente estas conclusiones sin necesidad de navegar a la carpeta de resultados.
+
+### 7) Ejemplo práctico de lectura de un gráfico (numérico)
+
+A continuación, se ilustra cómo debe analizarse la figura de `age` paso a paso.
+
+![Comparativa de age](../results/graphics/compare/compare_age.png)
+
+1. Eje X: representa la variable continua `age`, particionada en “bins” (bins = intervalos). Ambos conjuntos (real y sintético) usan los mismos bins.
+2. Eje Y: muestra proporciones (frecuencia relativa) por bin, no recuentos absolutos. Esto permite comparar distribuciones aun con tamaños de muestra distintos.
+3. Barras: azul = Real; roja = Synthetic. Cuando ambas alturas se parecen en la mayoría de los bins, la distribución sintética refleja adecuadamente la real.
+4. Coherencia con el reporte: en `comparison_report.json`, `age` presenta `rel_mean_diff = 0.212` y `std_rel_diff = 0.285`. Estos valores indican que la media y la dispersión del sintético difieren de las del real en torno al 21% y 28.5% respectivamente. Visualmente, esto suele manifestarse en desplazamiento del “centro” de masa (media) y en barras más concentradas o más extendidas (desviación). Ver términos en el Glosario (`docs/glossary.md`).
+5. Conclusión: si las diferencias visuales son sistemáticas (por ejemplo, la barra roja domina consistentemente a la azul en la zona de 30–40 años), entonces existe evidencia de deriva (drift) entre real y sintético para esa variable.
+
+Como pauta general, para cualquier `compare_<col>.png` numérico se siguen los mismos pasos: revisar ejes, comparar alturas por bin, confirmar con las métricas del reporte y emitir una conclusión breve sobre similitud o drift.
