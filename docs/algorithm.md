@@ -1,10 +1,10 @@
 ## Algoritmo y pipeline de generación de datos sintéticos
 
-Este documento describe, en tercera persona, el flujo end‑to‑end, las decisiones de preprocesamiento y el funcionamiento del GAN (Generative Adversarial Network = red generativa adversaria) utilizado para generar datos sintéticos del Titanic. Se incluyen referencias directas al código fuente y a los artefactos generados en `results/`.
+Este documento describe el flujo end‑to‑end, las decisiones de preprocesamiento y el funcionamiento del GAN (Generative Adversarial Network = red generativa adversaria) utilizado para generar datos sintéticos del Titanic. Incluyendo referencias directas al código fuente y a los artefactos generados en `results/`.
 
 ### 1) Carga y limpieza del dataset
 
-La carga y limpieza residen en `src/data/loader.py`. Se estandarizan nombres a snake_case (snake_case = minúsculas con guiones bajos), se convierten tipos numéricos y se imputan nulos con mediana/moda. También se eliminan duplicados y se registra un reporte completo.
+La carga y limpieza residen en `src/data/loader.py`. Se convierten tipos numéricos y se imputan nulos con mediana/moda. También se eliminan duplicados y se registra un reporte completo.
 
 ```1:18:src/data/loader.py
 import pandas as pd
