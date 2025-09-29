@@ -1,7 +1,5 @@
 ## Glosario técnico
 
-Este documento ofrece definiciones formales y breves aclaraciones destinadas a lectores técnicos y no técnicos. Se emplea tercera persona y, cuando procede, se incluyen aclaraciones entre paréntesis.
-
 ### GAN (Generative Adversarial Network)
 
 Arquitectura compuesta por dos redes neuronales que se entrenan de forma competitiva:

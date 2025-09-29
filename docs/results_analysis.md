@@ -1,6 +1,6 @@
 ## Análisis de resultados y cómo interpretarlos
 
-Este documento detalla, en tercera persona, cómo deben leerse los artefactos de `results/` y cómo se relacionan con el código que los produce. Cuando aparezcan términos técnicos, se incluirá entre paréntesis una aclaración breve. Para definiciones formales, consultar el Glosario en `docs/glossary.md`.
+Este documento detalla cómo deben leerse los artefactos de `results/` y cómo se relacionan con el código que los produce. Cuando aparezcan términos técnicos, se incluirá entre paréntesis una aclaración breve. Para definiciones formales, consultar el Glosario en `docs/glossary.md`.
 
 ### 1) Ubicación y propósito de cada salida
 
