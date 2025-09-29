@@ -40,6 +40,10 @@ python main.py
 
 Resultados en `results/`.
 
+### Dataset fuente
+
+El dataset original proviene de la competencia Titanic de Kaggle: [Datos de la competencia Titanic](https://www.kaggle.com/competitions/titanic/data).
+
 ### Documentación
 
 - Ver `docs/algorithm.md` para entender el flujo del pipeline, decisiones de preprocesamiento, el entrenamiento del generador y la función unificada de gráficos.
