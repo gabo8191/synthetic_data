@@ -1,110 +1,23 @@
-import numpy as np
+"""
+Módulo orquestador GAN.
+
+Este módulo coordina la generación de datos sintéticos usando GANs,
+integrando todos los componentes especializados en una API unificada.
+"""
+
 import pandas as pd
-import torch
-import torch.nn as nn
-import torch.optim as optim
-from torch.utils.data import DataLoader, TensorDataset
 import logging
+from typing import Optional
 
-
-def _train_gan_on_dataframe(
-    df: pd.DataFrame,
-    cantidad: int,
-    *,
-    epochs: int,
-    batch_size: int,
-    latent_dim: int,
-    log_prefix: str,
-) -> pd.DataFrame:
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    logger = logging.getLogger("gan")
-
-    data = df.values.astype(np.float32)
-
-    # Normalización [-1, 1] para Tanh
-    min_vals = data.min(axis=0)
-    max_vals = data.max(axis=0)
-    data = 2 * (data - min_vals) / (max_vals - min_vals + 1e-8) - 1
-
-    dataset = TensorDataset(torch.tensor(data))
-    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
-    input_dim = data.shape[1]
-
-    class Generator(nn.Module):
-        def __init__(self):
-            super().__init__()
-            self.model = nn.Sequential(
-                nn.Linear(latent_dim, 128),
-                nn.ReLU(),
-                nn.Linear(128, input_dim),
-                nn.Tanh(),
-            )
-
-        def forward(self, z):
-            return self.model(z)
-
-    class Discriminator(nn.Module):
-        def __init__(self):
-            super().__init__()
-            self.model = nn.Sequential(
-                nn.Linear(input_dim, 128), nn.ReLU(), nn.Linear(128, 1), nn.Sigmoid()
-            )
-
-        def forward(self, x):
-            return self.model(x)
-
-    generator = Generator().to(device)
-    discriminator = Discriminator().to(device)
-    loss_fn = nn.BCELoss()
-    optimizer_G = optim.Adam(generator.parameters(), lr=0.0002)
-    optimizer_D = optim.Adam(discriminator.parameters(), lr=0.0002)
-
-    for epoch in range(epochs):
-        for (real_batch,) in dataloader:
-            real_batch = real_batch.to(device)
-
-            # Discriminador
-            real_labels = torch.ones(real_batch.size(0), 1).to(device)
-            fake_labels = torch.zeros(real_batch.size(0), 1).to(device)
-
-            z = torch.randn(real_batch.size(0), latent_dim).to(device)
-            fake_data = generator(z)
-
-            real_preds = discriminator(real_batch)
-            fake_preds = discriminator(fake_data.detach())
-            loss_D = loss_fn(real_preds, real_labels) + loss_fn(fake_preds, fake_labels)
-
-            optimizer_D.zero_grad()
-            loss_D.backward()
-            optimizer_D.step()
-
-            # Generador
-            z = torch.randn(real_batch.size(0), latent_dim).to(device)
-            fake_data = generator(z)
-            fake_preds = discriminator(fake_data)
-            loss_G = loss_fn(fake_preds, real_labels)
-
-            optimizer_G.zero_grad()
-            loss_G.backward()
-            optimizer_G.step()
-
-        if epoch % 100 == 0:
-            logger.info(
-                f"{log_prefix} Epoch {epoch} | Loss D: {loss_D.item():.4f} | Loss G: {loss_G.item():.4f}"
-            )
-
-    # Generación
-    generator.eval()
-    with torch.no_grad():
-        z = torch.randn(cantidad, latent_dim).to(device)
-        synthetic_data = generator(z).cpu().numpy()
-
-    # Desnormaliza
-    synthetic_data = (synthetic_data + 1) / 2
-    synthetic_data = synthetic_data * (max_vals - min_vals + 1e-8) + min_vals
-
-    df_sintetico = pd.DataFrame(synthetic_data, columns=df.columns)
-    return df_sintetico
+from src.config import config
+from src.validation import validate_gan_parameters
+from src.models.gan_models import Generator, Discriminator
+from src.models.training import GANTrainer
+from src.models.generation import (
+    generate_standard_data,
+    generate_stratified_data,
+    validate_generated_data,
+)
 
 
 def simple_gan_generator(
@@ -114,63 +27,118 @@ def simple_gan_generator(
     batch_size: int = 64,
     latent_dim: int = 100,
     *,
-    labels: pd.Series | None = None,
+    labels: Optional[pd.Series] = None,
     stratified: bool = False,
 ) -> pd.DataFrame:
-    """Genera datos sintéticos con un GAN sencillo.
+    """
+    Genera datos sintéticos con un GAN sencillo.
 
-    - Si stratified=True y labels se proporcionan, entrena un GAN por clase
-      y concatena las muestras generadas en proporciones iguales.
+    Args:
+        df: DataFrame con datos de entrenamiento
+        cantidad: Cantidad de muestras a generar
+        epochs: Número de épocas de entrenamiento
+        batch_size: Tamaño del batch
+        latent_dim: Dimensión del espacio latente
+        labels: Etiquetas para entrenamiento estratificado
+        stratified: Si usar entrenamiento estratificado por clase
+
+    Returns:
+        DataFrame con datos sintéticos generados
     """
     logger = logging.getLogger("gan")
 
-    if stratified and labels is not None:
-        # Entrena por clase
-        unique_classes = sorted(pd.Series(labels).unique())
-        num_classes = len(unique_classes)
-        per_class = max(1, cantidad // max(1, num_classes))
-        generated_parts: list[pd.DataFrame] = []
-        for cls in unique_classes:
-            mask = labels == cls
-            df_cls = df.loc[mask]
-            logger.info(f"Entrenando GAN por clase={cls} con {len(df_cls)} filas...")
-            part = _train_gan_on_dataframe(
-                df_cls,
-                cantidad=per_class,
-                epochs=epochs,
-                batch_size=batch_size,
-                latent_dim=latent_dim,
-                log_prefix=f"[cls={cls}]",
-            )
-            generated_parts.append(part)
+    # Validar parámetros
+    validate_gan_parameters(
+        epochs, batch_size, latent_dim, config.gan.LEARNING_RATE, len(df)
+    )
 
-        df_sintetico = pd.concat(generated_parts, axis=0, ignore_index=True)
-        # Si faltan muestras por división entera, genera el remanente en la primera clase
-        if len(df_sintetico) < cantidad:
-            remaining = cantidad - len(df_sintetico)
-            first_cls = unique_classes[0]
-            mask = labels == first_cls
-            df_cls = df.loc[mask]
-            extra = _train_gan_on_dataframe(
-                df_cls,
-                cantidad=remaining,
-                epochs=epochs,
-                batch_size=batch_size,
-                latent_dim=latent_dim,
-                log_prefix=f"[cls={first_cls}]",
-            )
-            df_sintetico = pd.concat([df_sintetico, extra], axis=0, ignore_index=True)
-        return df_sintetico
+    logger.info(f"Iniciando generación GAN: {cantidad} muestras, {epochs} épocas")
 
-    # Estrategia estándar: un solo GAN
-    return _train_gan_on_dataframe(
-        df,
-        cantidad=cantidad,
-        epochs=epochs,
-        batch_size=batch_size,
+    try:
+        if stratified and labels is not None:
+            logger.info("Usando entrenamiento estratificado")
+            synthetic_df = generate_stratified_data(
+                df, cantidad, labels, epochs, batch_size, latent_dim
+            )
+        else:
+            logger.info("Usando entrenamiento estándar")
+            synthetic_df = generate_standard_data(
+                df, cantidad, epochs, batch_size, latent_dim
+            )
+
+        # Validar datos generados
+        validation_report = validate_generated_data(df, synthetic_df)
+        logger.info(f"Datos sintéticos generados: {synthetic_df.shape}")
+        logger.info(
+            f"Validación: {validation_report['column_comparison']['columns_match']}"
+        )
+
+        return synthetic_df
+
+    except Exception as e:
+        logger.error(f"Error en generación GAN: {str(e)}")
+        raise RuntimeError(f"Error en generación GAN: {str(e)}")
+
+
+def create_gan_trainer(
+    latent_dim: int = 100,
+    hidden_size: int = 128,
+    learning_rate: float = 0.0002,
+    device: Optional[str] = None,
+) -> GANTrainer:
+    """
+    Crea un entrenador GAN personalizado.
+
+    Args:
+        latent_dim: Dimensión del espacio latente
+        hidden_size: Tamaño de la capa oculta
+        learning_rate: Tasa de aprendizaje
+        device: Dispositivo para entrenamiento
+
+    Returns:
+        Entrenador GAN configurado
+    """
+    return GANTrainer(
         latent_dim=latent_dim,
-        log_prefix="",
+        hidden_size=hidden_size,
+        learning_rate=learning_rate,
+        device=device,
     )
 
 
-__all__ = ["simple_gan_generator"]
+def train_gan_with_custom_config(
+    df: pd.DataFrame, trainer: GANTrainer, epochs: int = 1200, batch_size: int = 64
+) -> pd.DataFrame:
+    """
+    Entrena un GAN con configuración personalizada.
+
+    Args:
+        df: DataFrame con datos de entrenamiento
+        trainer: Entrenador GAN personalizado
+        epochs: Número de épocas
+        batch_size: Tamaño del batch
+
+    Returns:
+        DataFrame con datos sintéticos generados
+    """
+    from src.models.generation import generate_with_custom_gan
+
+    logger = logging.getLogger("gan")
+    logger.info(f"Entrenando GAN personalizado: {epochs} épocas")
+
+    return generate_with_custom_gan(trainer, df, len(df), epochs, batch_size)
+
+
+# Re-exportar clases y funciones para compatibilidad
+from src.models.gan_models import Generator, Discriminator
+from src.models.training import GANTrainer
+
+
+__all__ = [
+    "simple_gan_generator",
+    "create_gan_trainer",
+    "train_gan_with_custom_config",
+    "Generator",
+    "Discriminator",
+    "GANTrainer",
+]
