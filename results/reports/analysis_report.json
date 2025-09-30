@@ -1,18 +1,26 @@
 {
     "class_analysis": {
         "original_distribution": {
-            "0.0": 549,
-            "1.0": 342
+            "0.0": 439,
+            "1.0": 273
         },
         "minority_class": 1.0,
-        "imbalance_ratio": 0.6229508196721312
+        "imbalance_ratio": 0.621867881548975
     },
     "balancing": {
         "method": "RandomUnderSampler",
         "new_distribution": {
-            "0.0": 342,
-            "1.0": 342
+            "0.0": 273,
+            "1.0": 273
         },
-        "samples_removed": 207
+        "samples_removed": 166,
+        "original_samples": 712,
+        "balanced_samples": 546
+    },
+    "validation": {
+        "original_imbalance_ratio": 1.6080586080586081,
+        "balanced_imbalance_ratio": 1.0,
+        "improvement_factor": 1.6080586080586081,
+        "is_balanced": true
     }
 }

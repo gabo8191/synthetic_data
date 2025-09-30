@@ -57,5 +57,71 @@
             "cabin": "object",
             "embarked": "object"
         }
+    },
+    "quality_report": {
+        "shape": [
+            891,
+            12
+        ],
+        "missing_values": {
+            "passengerid": 0,
+            "survived": 0,
+            "pclass": 0,
+            "name": 0,
+            "sex": 0,
+            "age": 0,
+            "sibsp": 0,
+            "parch": 0,
+            "ticket": 0,
+            "fare": 0,
+            "cabin": 0,
+            "embarked": 0
+        },
+        "missing_percentage": {
+            "passengerid": 0.0,
+            "survived": 0.0,
+            "pclass": 0.0,
+            "name": 0.0,
+            "sex": 0.0,
+            "age": 0.0,
+            "sibsp": 0.0,
+            "parch": 0.0,
+            "ticket": 0.0,
+            "fare": 0.0,
+            "cabin": 0.0,
+            "embarked": 0.0
+        },
+        "duplicates": 0,
+        "memory_usage_mb": 0.29467201232910156,
+        "data_types": {
+            "passengerid": "float64",
+            "survived": "float64",
+            "pclass": "float64",
+            "name": "object",
+            "sex": "object",
+            "age": "float64",
+            "sibsp": "float64",
+            "parch": "float64",
+            "ticket": "object",
+            "fare": "float64",
+            "cabin": "object",
+            "embarked": "object"
+        },
+        "numeric_columns": [
+            "passengerid",
+            "survived",
+            "pclass",
+            "age",
+            "sibsp",
+            "parch",
+            "fare"
+        ],
+        "categorical_columns": [
+            "name",
+            "sex",
+            "ticket",
+            "cabin",
+            "embarked"
+        ]
     }
 }
