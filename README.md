@@ -1,61 +1,81 @@
-## Proyecto: Generación de datos sintéticos (Titanic)
+# Proyecto: Generación de datos sintéticos (Titanic)
 
-Estructura final:
+## Estructura del proyecto
 
-```
+```text
 data/
-  Titanic-Dataset.csv
+  Titanic-Dataset.csv                    # Dataset original
 results/
-  data/
-  graphics/
-  reports/
+  data/                                  # Datasets procesados
+    cleaned_dataset.csv                  # Dataset limpio
+    balanced_data.csv                    # Dataset balanceado
+    synthetic_data.csv                   # Datos sintéticos generados
+  graphics/                              # Gráficos y visualizaciones
+    original_dist.png                    # Distribución original
+    balanced_dist.png                    # Distribución balanceada
+    correlation_matrix.png               # Matriz de correlación
+    survived_correlation.png             # Correlación con supervivencia
+    compare/                             # Comparaciones real vs sintético
+      compare_*.png                      # Gráficos por variable
+  reports/                               # Reportes JSON
+    cleaning_report.json                 # Reporte de limpieza
+    analysis_report.json                 # Reporte de análisis y balanceo
+    comparison_report.json               # Reporte de comparación
+    correlation_report.json              # Reporte de correlación
+    pipeline.log                         # Log del pipeline
 docs/
-  algorithm.md          # Explicación del pipeline y GAN
-  results_analysis.md   # Interpretación de resultados y métricas
-  glossary.md           # Glosario técnico y definiciones
-src/
-  algorithm.py        # GAN simple para generar datos
-  analyzer.py         # Análisis, balanceo y comparación
-  loader.py           # Carga y limpieza del dataset
-  main.py             # Pipeline principal (lee data, limpia, balancea, sintetiza)
-main.py               # entrypoint que llama a src.pipeline.main
-requirements.txt
+  algorithm.md                           # Explicación del pipeline y GAN
+  results_analysis.md                    # Interpretación de resultados
+  glossary.md                            # Glosario técnico
+  variables_explanation.md               # Explicación de variables
+src/                                     # Código fuente
+  config.py                              # Configuración centralizada
+  utils.py                               # Funciones utilitarias
+  validation.py                          # Validaciones
+  data/loader.py                         # Carga y limpieza
+  analysis/                              # Análisis de datos
+  models/                                # Modelos GAN
+  pipeline/main.py                       # Pipeline principal
+main.py                                  # Punto de entrada
+requirements.txt                         # Dependencias
 ```
 
-### Uso
+## Uso
 
-1. Crear y activar entorno
+### 1. Configuración del entorno
 
 ```bash
+# Crear entorno virtual
 python -m venv env_sintetic
-env_sintetic\Scripts\Activate.ps1  # Windows PowerShell
+
+# Activar entorno (Windows PowerShell)
+env_sintetic\Scripts\Activate.ps1
+
+# Instalar dependencias
 pip install -r requirements.txt
 ```
 
-2. Ejecutar
+### 2. Ejecución
 
 ```bash
 python main.py
 ```
 
-Resultados en `results/`.
+### 3. Resultados
 
-### Dataset fuente
+Los resultados se generan en la carpeta `results/`:
 
-El dataset original proviene de la competencia Titanic de Kaggle: [Datos de la competencia Titanic](https://www.kaggle.com/competitions/titanic/data).
+- **Datos**: `results/data/` - Datasets procesados
+- **Gráficos**: `results/graphics/` - Visualizaciones
+- **Reportes**: `results/reports/` - Análisis detallados
 
-### Documentación
+## Documentación
 
-- Ver `docs/algorithm.md` para entender el flujo del pipeline, decisiones de preprocesamiento, el entrenamiento del generador y la función unificada de gráficos.
-- Ver `docs/results_analysis.md` para interpretar `results/reports/*.json` y las figuras de `results/graphics/`.
-- Ver `docs/glossary.md` para definiciones formales (p. ej., GAN, estratificación, bins, fidelidad, drift).
+- **`docs/algorithm.md`**: Explicación técnica del pipeline y arquitectura GAN
+- **`docs/results_analysis.md`**: Interpretación detallada de resultados y métricas
+- **`docs/glossary.md`**: Definiciones de términos técnicos
+- **`docs/variables_explanation.md`**: Explicación de cada variable del dataset
 
-### Objetivo y organización
+## Dataset fuente
 
-- `data/`: datasets de entrada (p.ej. Titanic)
-- `results/`: resultados generados por el pipeline
-  - `results/data`: datasets limpios, balanceados y sintéticos
-  - `results/graphics`: gráficos de distribución y comparativas
-  - `results/reports`: reportes JSON de limpieza y análisis
-- `docs/`: documentación técnica y guía de interpretación de resultados
-- `src/`: código fuente organizado por responsabilidad
+Dataset original de la competencia Titanic de Kaggle: [Datos de la competencia Titanic](https://www.kaggle.com/competitions/titanic/data)
