@@ -1,0 +1,180 @@
+passengerid,pclass,name,sex,age,sibsp,parch,ticket,fare,cabin,embarked,survived
+566.0,3.0,"Davies, Mr. Alfred J",male,24.0,2.0,0.0,A/4 48871,24.15,B96 B98,S,0.0
+161.0,3.0,"Cribb, Mr. John Hatfield",male,44.0,0.0,1.0,371362,16.1,B96 B98,S,0.0
+554.0,3.0,"Leeni, Mr. Fahim (""Philip Zenni"")",male,22.0,0.0,0.0,2620,7.225,B96 B98,C,1.0
+861.0,3.0,"Hansen, Mr. Claus Peter",male,41.0,2.0,0.0,350026,14.1083,B96 B98,S,0.0
+242.0,3.0,"Murphy, Miss. Katherine ""Kate""",female,28.0,1.0,0.0,367230,15.5,B96 B98,Q,1.0
+560.0,3.0,"de Messemaeker, Mrs. Guillaume Joseph (Emma)",female,36.0,1.0,0.0,345572,17.4,B96 B98,S,1.0
+388.0,2.0,"Buss, Miss. Kate",female,36.0,0.0,0.0,27849,13.0,B96 B98,S,1.0
+537.0,1.0,"Butt, Major. Archibald Willingham",male,45.0,0.0,0.0,113050,26.55,B38,S,0.0
+699.0,1.0,"Thayer, Mr. John Borland",male,49.0,1.0,1.0,17421,110.8833,C68,C,0.0
+100.0,2.0,"Kantor, Mr. Sinai",male,34.0,1.0,0.0,244367,26.0,B96 B98,S,0.0
+127.0,3.0,"McMahon, Mr. Martin",male,28.0,0.0,0.0,370372,7.75,B96 B98,Q,0.0
+334.0,3.0,"Vander Planke, Mr. Leo Edmondus",male,16.0,2.0,0.0,345764,18.0,B96 B98,S,0.0
+217.0,3.0,"Honkanen, Miss. Eliina",female,27.0,0.0,0.0,STON/O2. 3101283,7.925,B96 B98,S,1.0
+818.0,2.0,"Mallet, Mr. Albert",male,31.0,1.0,1.0,S.C./PARIS 2079,37.0042,B96 B98,C,0.0
+28.0,1.0,"Fortune, Mr. Charles Alexander",male,19.0,3.0,2.0,19950,263.0,C23 C25 C27,S,0.0
+704.0,3.0,"Gallagher, Mr. Martin",male,25.0,0.0,0.0,36864,7.7417,B96 B98,Q,0.0
+486.0,3.0,"Lefebre, Miss. Jeannie",female,28.0,3.0,1.0,4133,25.4667,B96 B98,S,0.0
+512.0,3.0,"Webber, Mr. James",male,28.0,0.0,0.0,SOTON/OQ 3101316,8.05,B96 B98,S,0.0
+434.0,3.0,"Kallio, Mr. Nikolai Erland",male,17.0,0.0,0.0,STON/O 2. 3101274,7.125,B96 B98,S,0.0
+577.0,2.0,"Garside, Miss. Ethel",female,34.0,0.0,0.0,243880,13.0,B96 B98,S,1.0
+88.0,3.0,"Slocovski, Mr. Selman Francis",male,28.0,0.0,0.0,SOTON/OQ 392086,8.05,B96 B98,S,0.0
+581.0,2.0,"Christy, Miss. Julie Rachel",female,25.0,1.0,1.0,237789,30.0,B96 B98,S,1.0
+158.0,3.0,"Corn, Mr. Harry",male,30.0,0.0,0.0,SOTON/OQ 392090,8.05,B96 B98,S,0.0
+280.0,3.0,"Abbott, Mrs. Stanton (Rosa Hunt)",female,35.0,1.0,1.0,C.A. 2673,20.25,B96 B98,S,1.0
+423.0,3.0,"Zimmerman, Mr. Leo",male,29.0,0.0,0.0,315082,7.875,B96 B98,S,0.0
+370.0,1.0,"Aubart, Mme. Leontine Pauline",female,24.0,0.0,0.0,PC 17477,69.3,B35,C,1.0
+777.0,3.0,"Tobin, Mr. Roger",male,28.0,0.0,0.0,383121,7.75,F38,Q,0.0
+713.0,1.0,"Taylor, Mr. Elmer Zebley",male,48.0,1.0,0.0,19996,52.0,C126,S,1.0
+456.0,3.0,"Jalsevac, Mr. Ivan",male,29.0,0.0,0.0,349240,7.8958,B96 B98,C,1.0
+496.0,3.0,"Yousseff, Mr. Gerious",male,28.0,0.0,0.0,2627,14.4583,B96 B98,C,0.0
+759.0,3.0,"Theobald, Mr. Thomas Leonard",male,34.0,0.0,0.0,363294,8.05,B96 B98,S,0.0
+731.0,1.0,"Allen, Miss. Elisabeth Walton",female,29.0,0.0,0.0,24160,211.3375,B5,S,1.0
+66.0,3.0,"Moubarek, Master. Gerios",male,28.0,1.0,1.0,2661,15.2458,B96 B98,C,1.0
+76.0,3.0,"Moen, Mr. Sigurd Hansen",male,25.0,0.0,0.0,348123,7.65,F G73,S,0.0
+490.0,3.0,"Coutts, Master. Eden Leslie ""Neville""",male,9.0,1.0,1.0,C.A. 37671,15.9,B96 B98,S,1.0
+870.0,3.0,"Johnson, Master. Harold Theodor",male,4.0,1.0,1.0,347742,11.1333,B96 B98,S,1.0
+166.0,3.0,"Goldsmith, Master. Frank John William ""Frankie""",male,9.0,0.0,2.0,363291,20.525,B96 B98,S,1.0
+72.0,3.0,"Goodwin, Miss. Lillian Amy",female,16.0,5.0,2.0,CA 2144,46.9,B96 B98,S,0.0
+429.0,3.0,"Flynn, Mr. James",male,28.0,0.0,0.0,364851,7.75,B96 B98,Q,0.0
+418.0,2.0,"Silven, Miss. Lyyli Karoliina",female,18.0,0.0,2.0,250652,13.0,B96 B98,S,1.0
+746.0,1.0,"Crosby, Capt. Edward Gifford",male,70.0,1.0,1.0,WE/P 5735,71.0,B22,S,0.0
+298.0,1.0,"Allison, Miss. Helen Loraine",female,2.0,1.0,2.0,113781,151.55,C22 C26,S,0.0
+464.0,2.0,"Milling, Mr. Jacob Christian",male,48.0,0.0,0.0,234360,13.0,B96 B98,S,0.0
+85.0,2.0,"Ilett, Miss. Bertha",female,17.0,0.0,0.0,SO/C 14885,10.5,B96 B98,S,1.0
+212.0,2.0,"Cameron, Miss. Clear Annie",female,35.0,0.0,0.0,F.C.C. 13528,21.0,B96 B98,S,1.0
+116.0,3.0,"Pekoniemi, Mr. Edvard",male,21.0,0.0,0.0,STON/O 2. 3101294,7.925,B96 B98,S,0.0
+869.0,3.0,"van Melkebeke, Mr. Philemon",male,28.0,0.0,0.0,345777,9.5,B96 B98,S,0.0
+41.0,3.0,"Ahlin, Mrs. Johan (Johanna Persdotter Larsson)",female,40.0,1.0,0.0,7546,9.475,B96 B98,S,0.0
+645.0,3.0,"Baclini, Miss. Eugenie",female,0.75,2.0,1.0,2666,19.2583,B96 B98,C,1.0
+323.0,2.0,"Slayter, Miss. Hilda Mary",female,30.0,0.0,0.0,234818,12.35,B96 B98,Q,1.0
+760.0,1.0,"Rothes, the Countess. of (Lucy Noel Martha Dyer-Edwards)",female,33.0,0.0,0.0,110152,86.5,B77,S,1.0
+565.0,3.0,"Meanwell, Miss. (Marion Ogden)",female,28.0,0.0,0.0,SOTON/O.Q. 392087,8.05,B96 B98,S,0.0
+503.0,3.0,"O'Sullivan, Miss. Bridget Mary",female,28.0,0.0,0.0,330909,7.6292,B96 B98,Q,0.0
+18.0,2.0,"Williams, Mr. Charles Eugene",male,28.0,0.0,0.0,244373,13.0,B96 B98,S,1.0
+680.0,1.0,"Cardeza, Mr. Thomas Drake Martinez",male,36.0,0.0,1.0,PC 17755,512.3292,B51 B53 B55,C,1.0
+402.0,3.0,"Adams, Mr. John",male,26.0,0.0,0.0,341826,8.05,B96 B98,S,0.0
+640.0,3.0,"Thorneycroft, Mr. Percival",male,28.0,1.0,0.0,376564,16.1,B96 B98,S,0.0
+702.0,1.0,"Silverthorne, Mr. Spencer Victor",male,35.0,0.0,0.0,PC 17475,26.2875,E24,S,1.0
+107.0,3.0,"Salkjelsvik, Miss. Anna Kristine",female,21.0,0.0,0.0,343120,7.65,B96 B98,S,1.0
+448.0,1.0,"Seward, Mr. Frederic Kimber",male,34.0,0.0,0.0,113794,26.55,B96 B98,S,1.0
+579.0,3.0,"Caram, Mrs. Joseph (Maria Elias)",female,28.0,1.0,0.0,2689,14.4583,B96 B98,C,0.0
+473.0,2.0,"West, Mrs. Edwy Arthur (Ada Mary Worth)",female,33.0,1.0,2.0,C.A. 34651,27.75,B96 B98,S,1.0
+765.0,3.0,"Eklund, Mr. Hans Linus",male,16.0,0.0,0.0,347074,7.775,B96 B98,S,0.0
+398.0,2.0,"McKane, Mr. Peter David",male,46.0,0.0,0.0,28403,26.0,B96 B98,S,0.0
+691.0,1.0,"Dick, Mr. Albert Adrian",male,31.0,1.0,0.0,17474,57.0,B20,S,1.0
+39.0,3.0,"Vander Planke, Miss. Augusta Maria",female,18.0,2.0,0.0,345764,18.0,B96 B98,S,0.0
+376.0,1.0,"Meyer, Mrs. Edgar Joseph (Leila Saks)",female,28.0,1.0,0.0,PC 17604,82.1708,B96 B98,C,1.0
+753.0,3.0,"Vande Velde, Mr. Johannes Joseph",male,33.0,0.0,0.0,345780,9.5,B96 B98,S,0.0
+626.0,1.0,"Sutton, Mr. Frederick",male,61.0,0.0,0.0,36963,32.3208,D50,S,0.0
+865.0,2.0,"Gill, Mr. John William",male,24.0,0.0,0.0,233866,13.0,B96 B98,S,0.0
+276.0,1.0,"Andrews, Miss. Kornelia Theodosia",female,63.0,1.0,0.0,13502,77.9583,D7,S,1.0
+774.0,3.0,"Elias, Mr. Dibo",male,28.0,0.0,0.0,2674,7.225,B96 B98,C,0.0
+594.0,3.0,"Bourke, Miss. Mary",female,28.0,0.0,2.0,364848,7.75,B96 B98,Q,0.0
+505.0,1.0,"Maioni, Miss. Roberta",female,16.0,0.0,0.0,110152,86.5,B79,S,1.0
+240.0,2.0,"Hunt, Mr. George Henry",male,33.0,0.0,0.0,SCO/W 1585,12.275,B96 B98,S,0.0
+154.0,3.0,"van Billiard, Mr. Austin Blyler",male,40.5,0.0,2.0,A/5. 851,14.5,B96 B98,S,0.0
+615.0,3.0,"Brocklebank, Mr. William Alfred",male,35.0,0.0,0.0,364512,8.05,B96 B98,S,0.0
+443.0,3.0,"Petterson, Mr. Johan Emil",male,25.0,1.0,0.0,347076,7.775,B96 B98,S,0.0
+181.0,3.0,"Sage, Miss. Constance Gladys",female,28.0,8.0,2.0,CA. 2343,69.55,B96 B98,S,0.0
+635.0,3.0,"Skoog, Miss. Mabel",female,9.0,3.0,2.0,347088,27.9,B96 B98,S,0.0
+387.0,3.0,"Goodwin, Master. Sidney Leonard",male,1.0,5.0,2.0,CA 2144,46.9,B96 B98,S,0.0
+245.0,3.0,"Attalah, Mr. Sleiman",male,30.0,0.0,0.0,2694,7.225,B96 B98,C,0.0
+750.0,3.0,"Connaghton, Mr. Michael",male,31.0,0.0,0.0,335097,7.75,B96 B98,Q,0.0
+163.0,3.0,"Bengtsson, Mr. John Viktor",male,26.0,0.0,0.0,347068,7.775,B96 B98,S,0.0
+502.0,3.0,"Canavan, Miss. Mary",female,21.0,0.0,0.0,364846,7.75,B96 B98,Q,0.0
+93.0,1.0,"Chaffee, Mr. Herbert Fuller",male,46.0,1.0,0.0,W.E.P. 5734,61.175,E31,S,0.0
+715.0,2.0,"Greenberg, Mr. Samuel",male,52.0,0.0,0.0,250647,13.0,B96 B98,S,0.0
+432.0,3.0,"Thorneycroft, Mrs. Percival (Florence Kate White)",female,28.0,1.0,0.0,376564,16.1,B96 B98,S,1.0
+453.0,1.0,"Foreman, Mr. Benjamin Laventall",male,30.0,0.0,0.0,113051,27.75,C111,C,0.0
+854.0,1.0,"Lines, Miss. Mary Conover",female,16.0,0.0,1.0,PC 17592,39.4,D28,S,1.0
+56.0,1.0,"Woolner, Mr. Hugh",male,28.0,0.0,0.0,19947,35.5,C52,S,1.0
+352.0,1.0,"Williams-Lambert, Mr. Fletcher Fellows",male,28.0,0.0,0.0,113510,35.0,C128,S,0.0
+571.0,2.0,"Harris, Mr. George",male,62.0,0.0,0.0,S.W./PP 752,10.5,B96 B98,S,1.0
+30.0,3.0,"Todoroff, Mr. Lalio",male,28.0,0.0,0.0,349216,7.8958,B96 B98,S,0.0
+63.0,1.0,"Harris, Mr. Henry Birkhardt",male,45.0,1.0,0.0,36973,83.475,C83,S,0.0
+597.0,2.0,"Leitch, Miss. Jessie Wills",female,28.0,0.0,0.0,248727,33.0,B96 B98,S,1.0
+459.0,2.0,"Toomey, Miss. Ellen",female,50.0,0.0,0.0,F.C.C. 13531,10.5,B96 B98,S,1.0
+460.0,3.0,"O'Connor, Mr. Maurice",male,28.0,0.0,0.0,371060,7.75,B96 B98,Q,0.0
+5.0,3.0,"Allen, Mr. William Henry",male,35.0,0.0,0.0,373450,8.05,B96 B98,S,0.0
+272.0,3.0,"Tornquist, Mr. William Henry",male,25.0,0.0,0.0,LINE,0.0,B96 B98,S,1.0
+253.0,1.0,"Stead, Mr. William Thomas",male,62.0,0.0,0.0,113514,26.55,C87,S,0.0
+342.0,1.0,"Fortune, Miss. Alice Elizabeth",female,24.0,3.0,2.0,19950,263.0,C23 C25 C27,S,1.0
+83.0,3.0,"McDermott, Miss. Brigdet Delia",female,28.0,0.0,0.0,330932,7.7875,B96 B98,Q,1.0
+10.0,2.0,"Nasser, Mrs. Nicholas (Adele Achem)",female,14.0,1.0,0.0,237736,30.0708,B96 B98,C,1.0
+811.0,3.0,"Alexander, Mr. William",male,26.0,0.0,0.0,3474,7.8875,B96 B98,S,0.0
+24.0,1.0,"Sloper, Mr. William Thompson",male,28.0,0.0,0.0,113788,35.5,A6,S,1.0
+842.0,2.0,"Mudd, Mr. Thomas Charles",male,16.0,0.0,0.0,S.O./P.P. 3,10.5,B96 B98,S,0.0
+411.0,3.0,"Sdycoff, Mr. Todor",male,28.0,0.0,0.0,349222,7.8958,B96 B98,S,0.0
+567.0,3.0,"Stoytcheff, Mr. Ilia",male,19.0,0.0,0.0,349205,7.8958,B96 B98,S,0.0
+246.0,1.0,"Minahan, Dr. William Edward",male,44.0,2.0,0.0,19928,90.0,C78,Q,0.0
+561.0,3.0,"Morrow, Mr. Thomas Rowan",male,28.0,0.0,0.0,372622,7.75,B96 B98,Q,0.0
+325.0,3.0,"Sage, Mr. George John Jr",male,28.0,8.0,2.0,CA. 2343,69.55,B96 B98,S,0.0
+147.0,3.0,"Andersson, Mr. August Edvard (""Wennerstrom"")",male,27.0,0.0,0.0,350043,7.7958,B96 B98,S,1.0
+660.0,1.0,"Newell, Mr. Arthur Webster",male,58.0,0.0,2.0,35273,113.275,D48,C,0.0
+572.0,1.0,"Appleton, Mrs. Edward Dale (Charlotte Lamson)",female,53.0,2.0,0.0,11769,51.4792,C101,S,1.0
+197.0,3.0,"Mernagh, Mr. Robert",male,28.0,0.0,0.0,368703,7.75,B96 B98,Q,0.0
+17.0,3.0,"Rice, Master. Eugene",male,2.0,4.0,1.0,382652,29.125,B96 B98,Q,0.0
+139.0,3.0,"Osen, Mr. Olaf Elon",male,16.0,0.0,0.0,7534,9.2167,B96 B98,S,0.0
+744.0,3.0,"McNamee, Mr. Neal",male,24.0,1.0,0.0,376566,16.1,B96 B98,S,0.0
+556.0,1.0,"Wright, Mr. George",male,62.0,0.0,0.0,113807,26.55,B96 B98,S,0.0
+106.0,3.0,"Mionoff, Mr. Stoytcho",male,28.0,0.0,0.0,349207,7.8958,B96 B98,S,0.0
+727.0,2.0,"Renouf, Mrs. Peter Henry (Lillian Jefferys)",female,30.0,3.0,0.0,31027,21.0,B96 B98,S,1.0
+604.0,3.0,"Torber, Mr. Ernst William",male,44.0,0.0,0.0,364511,8.05,B96 B98,S,0.0
+542.0,3.0,"Andersson, Miss. Ingeborg Constanzia",female,9.0,4.0,2.0,347082,31.275,B96 B98,S,0.0
+776.0,3.0,"Myhrman, Mr. Pehr Fabian Oliver Malkolm",male,18.0,0.0,0.0,347078,7.75,B96 B98,S,0.0
+825.0,3.0,"Panula, Master. Urho Abraham",male,2.0,4.0,1.0,3101295,39.6875,B96 B98,S,0.0
+337.0,1.0,"Pears, Mr. Thomas Clinton",male,29.0,1.0,0.0,113776,66.6,C2,S,0.0
+800.0,3.0,"Van Impe, Mrs. Jean Baptiste (Rosalie Paula Govaert)",female,30.0,1.0,1.0,345773,24.15,B96 B98,S,0.0
+677.0,3.0,"Sawyer, Mr. Frederick Charles",male,24.5,0.0,0.0,342826,8.05,B96 B98,S,0.0
+608.0,1.0,"Daniel, Mr. Robert Williams",male,27.0,0.0,0.0,113804,30.5,B96 B98,S,1.0
+827.0,3.0,"Lam, Mr. Len",male,28.0,0.0,0.0,1601,56.4958,B96 B98,S,0.0
+757.0,3.0,"Carlsson, Mr. August Sigfrid",male,28.0,0.0,0.0,350042,7.7958,B96 B98,S,0.0
+187.0,3.0,"O'Brien, Mrs. Thomas (Johanna ""Hannah"" Godfrey)",female,28.0,1.0,0.0,370365,15.5,B96 B98,Q,1.0
+412.0,3.0,"Hart, Mr. Henry",male,28.0,0.0,0.0,394140,6.8583,B96 B98,Q,0.0
+550.0,2.0,"Davies, Master. John Morgan Jr",male,8.0,1.0,1.0,C.A. 33112,36.75,B96 B98,S,1.0
+442.0,3.0,"Hampe, Mr. Leon",male,20.0,0.0,0.0,345769,9.5,B96 B98,S,0.0
+436.0,1.0,"Carter, Miss. Lucile Polk",female,14.0,1.0,2.0,113760,120.0,B96 B98,S,1.0
+791.0,3.0,"Keane, Mr. Andrew ""Andy""",male,28.0,0.0,0.0,12460,7.75,B96 B98,Q,0.0
+199.0,3.0,"Madigan, Miss. Margaret ""Maggie""",female,28.0,0.0,0.0,370370,7.75,B96 B98,Q,1.0
+445.0,3.0,"Johannesen-Bratthammer, Mr. Bernt",male,28.0,0.0,0.0,65306,8.1125,B96 B98,S,1.0
+672.0,1.0,"Davidson, Mr. Thornton",male,31.0,1.0,0.0,F.C. 12750,52.0,B71,S,0.0
+297.0,3.0,"Hanna, Mr. Mansour",male,23.5,0.0,0.0,2693,7.2292,B96 B98,C,0.0
+803.0,1.0,"Carter, Master. William Thornton II",male,11.0,1.0,2.0,113760,120.0,B96 B98,S,1.0
+138.0,1.0,"Futrelle, Mr. Jacques Heath",male,37.0,1.0,0.0,113803,53.1,C123,S,0.0
+533.0,3.0,"Elias, Mr. Joseph Jr",male,17.0,1.0,1.0,2690,7.2292,B96 B98,C,0.0
+588.0,1.0,"Frolicher-Stehli, Mr. Maxmillian",male,60.0,1.0,1.0,13567,79.2,B41,C,1.0
+879.0,3.0,"Laleff, Mr. Kristo",male,28.0,0.0,0.0,349217,7.8958,B96 B98,S,0.0
+729.0,2.0,"Bryhl, Mr. Kurt Arnold Gottfrid",male,25.0,1.0,0.0,236853,26.0,B96 B98,S,0.0
+390.0,2.0,"Lehmann, Miss. Bertha",female,17.0,0.0,0.0,SC 1748,12.0,B96 B98,C,1.0
+428.0,2.0,"Phillips, Miss. Kate Florence (""Mrs Kate Louise Phillips Marshall"")",female,19.0,0.0,0.0,250655,26.0,B96 B98,S,1.0
+805.0,3.0,"Hedman, Mr. Oskar Arvid",male,27.0,0.0,0.0,347089,6.975,B96 B98,S,1.0
+732.0,3.0,"Hassan, Mr. Houssein G N",male,11.0,0.0,0.0,2699,18.7875,B96 B98,C,0.0
+89.0,1.0,"Fortune, Miss. Mabel Helen",female,23.0,3.0,2.0,19950,263.0,C23 C25 C27,S,1.0
+40.0,3.0,"Nicola-Yarred, Miss. Jamila",female,14.0,1.0,0.0,2651,11.2417,B96 B98,C,1.0
+493.0,1.0,"Molson, Mr. Harry Markland",male,55.0,0.0,0.0,113787,30.5,C30,S,0.0
+824.0,3.0,"Moor, Mrs. (Beila)",female,27.0,0.0,1.0,392096,12.475,E121,S,1.0
+887.0,2.0,"Montvila, Rev. Juozas",male,27.0,0.0,0.0,211536,13.0,B96 B98,S,0.0
+354.0,3.0,"Arnold-Franchi, Mr. Josef",male,25.0,1.0,0.0,349237,17.8,B96 B98,S,0.0
+686.0,2.0,"Laroche, Mr. Joseph Philippe Lemercier",male,25.0,1.0,2.0,SC/Paris 2123,41.5792,B96 B98,C,0.0
+12.0,1.0,"Bonnell, Miss. Elizabeth",female,58.0,0.0,0.0,113783,26.55,C103,S,1.0
+485.0,1.0,"Bishop, Mr. Dickinson H",male,25.0,1.0,0.0,11967,91.0792,B49,C,1.0
+367.0,1.0,"Warren, Mrs. Frank Manley (Anna Sophia Atkinson)",female,60.0,1.0,0.0,110813,75.25,D37,C,1.0
+301.0,3.0,"Kelly, Miss. Anna Katherine ""Annie Kate""",female,28.0,0.0,0.0,9234,7.75,B96 B98,Q,1.0
+880.0,1.0,"Potter, Mrs. Thomas Jr (Lily Alexenia Wilson)",female,56.0,0.0,1.0,11767,83.1583,C50,C,1.0
+531.0,2.0,"Quick, Miss. Phyllis May",female,2.0,1.0,1.0,26360,26.0,B96 B98,S,1.0
+294.0,3.0,"Haas, Miss. Aloisia",female,24.0,0.0,0.0,349236,8.85,B96 B98,S,0.0
+815.0,3.0,"Tomlin, Mr. Ernest Portage",male,30.5,0.0,0.0,364499,8.05,B96 B98,S,0.0
+516.0,1.0,"Walker, Mr. William Anderson",male,47.0,0.0,0.0,36967,34.0208,D46,S,0.0
+200.0,2.0,"Yrois, Miss. Henriette (""Mrs Harbeck"")",female,24.0,0.0,0.0,248747,13.0,B96 B98,S,0.0
+143.0,3.0,"Hakkarainen, Mrs. Pekka Pietari (Elin Matilda Dolck)",female,24.0,1.0,0.0,STON/O2. 3101279,15.85,B96 B98,S,1.0
+350.0,3.0,"Dimic, Mr. Jovan",male,42.0,0.0,0.0,315088,8.6625,B96 B98,S,0.0
+355.0,3.0,"Yousif, Mr. Wazli",male,28.0,0.0,0.0,2647,7.225,B96 B98,C,0.0
+296.0,1.0,"Lewy, Mr. Ervin G",male,28.0,0.0,0.0,PC 17612,27.7208,B96 B98,C,0.0
+144.0,3.0,"Burke, Mr. Jeremiah",male,19.0,0.0,0.0,365222,6.75,B96 B98,Q,0.0
+881.0,2.0,"Shelley, Mrs. William (Imanita Parrish Hall)",female,25.0,0.0,1.0,230433,26.0,B96 B98,S,1.0
+92.0,3.0,"Andreasson, Mr. Paul Edvin",male,20.0,0.0,0.0,347466,7.8542,B96 B98,S,0.0
+884.0,2.0,"Banfield, Mr. Frederick James",male,28.0,0.0,0.0,C.A./SOTON 34068,10.5,B96 B98,S,0.0
+474.0,2.0,"Jerwan, Mrs. Amin S (Marie Marthe Thuillard)",female,23.0,0.0,0.0,SC/AH Basle 541,13.7917,D,C,1.0
+638.0,2.0,"Collyer, Mr. Harvey",male,31.0,1.0,1.0,C.A. 31921,26.25,B96 B98,S,0.0
